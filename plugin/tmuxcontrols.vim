@@ -1,18 +1,18 @@
 function Runontmux()
 	write
-	!~/.vim/plugged/tmuxcontrols/scripts/tmuxscreens %
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmuxscreens %
 endfunction
 function Runontmuxv()
 	write
-	!~/.vim/plugged/tmuxcontrols/scripts/tmuxscreensV %
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmuxscreensV %
 endfunction
 function Runtmuxt()
 	write
-	!~/.vim/plugged/tmuxcontrols/scripts/tmuxscreensT
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmuxscreensT
 endfunction
 function Runtmuxclean()
 	write
-	!~/.vim/plugged/tmuxcontrols/scripts/tmuxscreens2 %
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmuxscreens2 %
 endfunction
 function Cleantmux()
 	!tmux send -t 2 "clear" Enter
@@ -28,7 +28,7 @@ autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " 
 au VimLeave * silent call system("tmux setw automatic-rename")
 
 " Remaps gf to open file in a new tmux window
-nmap gf :!~/.vim/plugged/tmuxcontrols/scripts/gf <cfile><CR>
+nmap gf :!~/.vim/plugged/tmuxcontrols/plugin/scripts/gf <cfile><CR>
 
 " Manages tmux as a debugging tool
 nmap çc :call Runtmuxclean()<CR> 
