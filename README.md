@@ -1,2 +1,2 @@
 # tmuxcontrols
-Vim plugin for code debugging via tmux panes.
+Vim plugin for python debugging via tmux panes.
