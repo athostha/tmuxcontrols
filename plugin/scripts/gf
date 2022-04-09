@@ -1,0 +1,4 @@
+#!/bin/bash
+
+name=${1?Error: no name given}
+tmux new-window -n "$name" vim "$name"
