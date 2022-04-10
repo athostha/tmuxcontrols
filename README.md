@@ -15,7 +15,7 @@ let $tmuxInterpreter_alternative = 'python' 	" secondary interpreter, second opt
 let $tmuxcommand = 'pytest' 			" runs command without argument.
 
 
-### mapping options on tmuxcontrols
+### mapping commands
 nmap çç :call Runtmux_horizontal()<CR><CR> 	" Opens new pane horizontally and runs script.
 
 nmap çÇ :call Runtmux_vertical()<CR><CR>  	" Opens new pane vertically and runs script.
