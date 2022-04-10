@@ -1,20 +1,26 @@
 # tmuxcontrols
-Vim plugin for python debugging via tmux panes.
+Vim plugin for code debugging via tmux panes.
 
-### Usage
-çç - Splits the screen horizontally and executes the script on the new pane.
+# Setup and usage
+Paste these on your .vimrc
 
-çÇ - Splits the screen Vertically and executes the script on the new pane.
+let tmux_gf=1 					" gf opens file on new tmux window, instead of a new vim buffer.
+let tmux_rename=1 				" tmux winows will be renamed the same as the open file.
+let $tmuxInterpreter = 'python3' 		" primary interpreter, this is the program that will run your script.
+let $tmuxInterpreter_alternative = 'python' 	" secondary interpreter, second option of interpreter.
+let $tmuxcommand = 'pytest' 			" runs command without argument.
 
-çc - Splits the screen horizontally and executes the script on the new pane, but with the normal python interpreter.
 
-If there's a second pane, the script will be executed there. It won't create a new one.
+### mapping options on tmuxcontrols
+nmap çç :call Runtmux_horizontal()<CR><CR> 	" Opens new pane horizontally and runs script.
+nmap çÇ :call Runtmux_vertical()<CR><CR>  	" Opens new pane vertically and runs script.
+nmap çc :call Runtmux_alternative()<CR><CR> 	" Opens new pane horizontally and runs script with alternative interpreter.
+nmap çe :call Runtmux_execute()<CR><CR>		" Executes script itself as shell command
+nmap Ç :call Runtmux_command()<CR><CR>		" Opens new pane horizontally and runs command without argument.
+nmap çl :call Runtmux_clean()<CR>		" Sends clear command to the debugging pane. 
+nmap çs :call Stop_tmux()<CR><CR>		" Sends ^C command to the debugging pane.
 
-Ç - Runs pytest.
 
-çl - Sends a clear command to the debugger pane.
 
-çs - Sends a ^C command to the debugger pane.
-
-### Warning
-Right now the çç and çÇ commands are directed to a custom script to be used as interpreter. To be fixed. 
+### TODO
+Run script on a new window

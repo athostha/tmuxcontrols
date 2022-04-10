@@ -1,42 +1,46 @@
-function Runontmux()
-	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmuxscreens %
+function Runtmux_vertical()
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_vertical
+	!tmux send -t 2 $tmuxInterpreter\ %:p Enter
 endfunction
-function Runontmuxv()
-	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmuxscreensV %
+
+function Runtmux_horizontal()
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
+	!tmux send -t 2 $tmuxInterpreter\ %:p Enter
 endfunction
-function Runtmuxt()
-	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmuxscreensT
+
+function Runtmux_command()
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
+	!tmux send -t 2 $tmuxcommand Enter
 endfunction
-function Runtmuxclean()
-	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmuxscreens2 %
+function Runtmux_alternative()
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
+	!tmux send -t 2 $tmuxInterpreter_alternative\ %:p Enter
 endfunction
-function Cleantmux()
+function Runtmux_execute()
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
+	!tmux send -t 2 %:p Enter
+endfunction
+function Runtmux_clean()
 	!tmux send -t 2 "clear" Enter
 endfunction
-function Stoptmux()
+function Stop_tmux()
 	!tmux send-keys -t 2 'C-c'
 endfunction
 
 
 
-" Renames tmux window after current buffer, than changes it back at closing time
-autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
-au VimLeave * silent call system("tmux setw automatic-rename")
+" Remaps gf to open file in a new tmux window. tmux_gf variable must be set.
+if exists('tmux_gf')
+	nmap gf :!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmux_gf <cfile><CR><CR>
+endif
 
-" Remaps gf to open file in a new tmux window
-nmap gf :!~/.vim/plugged/tmuxcontrols/plugin/scripts/gf <cfile><CR>
 
-" Manages tmux as a debugging tool
-nmap çc :call Runtmuxclean()<CR> 
-nmap Ç :call Runtmuxt()<CR> 
-nmap çç :call Runontmux()<CR> 
-nmap çÇ :call Runontmuxv()<CR> 
-nmap çl :call Cleantmux()<CR> 
-nmap çs :call Stoptmux()<CR><CR>
+" Renames tmux window after current buffer, than changes it back at closing time. tmux_rename variable must be on.
+if exists('tmux_rename')
+	autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
+	au VimLeave * silent call system("tmux setw automatic-rename")
+endif
+
 
 
 

@@ -6,10 +6,3 @@ if [ $number -lt 2 ]; then
 	tmux splitw -h -p 38 -c "#{pane_current_path}"
 	tmux select-pane -L
 fi
-if [[ "$@" == *.py ]]; then 
-	tmux send -t 2 'python3 '$@ Enter
-elif [[ "$@" == *.js ]]; then 
-	tmux send -t 2 'node '$@ Enter
-else
-	tmux send -t 2 './'$@ Enter
-fi
