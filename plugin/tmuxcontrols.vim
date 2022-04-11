@@ -1,22 +1,27 @@
 function Runtmux_vertical()
+	write
 	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_vertical
 	!tmux send -t 2 $tmuxInterpreter\ %:p Enter
 endfunction
 
 function Runtmux_horizontal()
+	write
 	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
 	!tmux send -t 2 $tmuxInterpreter\ %:p Enter
 endfunction
 
 function Runtmux_command()
+	write
 	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
 	!tmux send -t 2 $tmuxcommand Enter
 endfunction
 function Runtmux_alternative()
+	write
 	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
 	!tmux send -t 2 $tmuxInterpreter_alternative\ %:p Enter
 endfunction
 function Runtmux_execute()
+	write
 	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
 	!tmux send -t 2 %:p Enter
 endfunction
