@@ -31,13 +31,11 @@ endfunction
 function Stop_tmux()
 	!tmux send-keys -t 2 'C-c'
 endfunction
+function Runtmux_new_file()
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmux_gf <cfile>
+endfunction
 
 
-
-" Remaps gf to open file in a new tmux window. tmux_gf variable must be set.
-if exists('tmux_gf')
-	nmap gf :!~/.vim/plugged/tmuxcontrols/plugin/scripts/tmux_gf <cfile><CR><CR>
-endif
 
 
 " Renames tmux window after current buffer, than changes it back at closing time. tmux_rename variable must be on.

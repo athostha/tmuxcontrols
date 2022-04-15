@@ -30,6 +30,7 @@ nmap çl :call Runtmux_clean()<CR>		" Sends clear command to the debugging pane.
 
 nmap çs :call Stop_tmux()<CR><CR>		" Sends ^C command to the debugging pane.
 
+nmap gf :call Runtmux_new_file()<CR><CR>	" gf opens file on new tmux window, instead of a new vim buffer.
 
 
 ## TODO
