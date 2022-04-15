@@ -4,7 +4,6 @@ Vim plugin for code debugging via tmux panes.
 # Setup and usage
 Paste these on your .vimrc
 
-let tmux_gf=1 					" gf opens file on new tmux window, instead of a new vim buffer.
 
 let tmux_rename=1 				" tmux winows will be renamed the same as the open file.
 
