@@ -21,6 +21,8 @@ nmap çÇ :call Runtmux_vertical()<CR><CR>  	" Opens new pane vertically and run
 
 nmap çc :call Runtmux_alternative()<CR><CR> 	" Opens new pane horizontally and runs script with alternative interpreter.
 
+nmap çy :call Runtmux_copy()<CR><CR> 		" Copies output to the system clipboard with xclip.
+
 nmap çe :call Runtmux_execute()<CR><CR>		" Executes script itself as shell command
 
 nmap Ç :call Runtmux_command()<CR><CR>		" Opens new pane horizontally and runs command without argument.
