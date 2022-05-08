@@ -3,12 +3,10 @@
 shopt -s lastpipe
 tmux list-panes | wc -l | read number
 if [ $number -lt 2 ]; then
+	tmux splitw -$1 -p $2 -c "#{pane_current_path}"
 	if [[ "$1" == "v" ]]; then
-		tmux splitw -v -p $2 -c "#{pane_current_path}"
 		tmux select-pane -U
-	fi
-	if [[ "$1" == "h" ]]; then
-		tmux splitw -h -p $2 -c "#{pane_current_path}"
+	else
 		tmux select-pane -L
 	fi
 fi
