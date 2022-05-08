@@ -1,9 +1,0 @@
-#!/bin/bash
-
-shopt -s lastpipe
-tmux list-panes | wc -l | read number
-if [ $number -lt 2 ]; then
-	tmux splitw -v -p 23 -c "#{pane_current_path}"
-	tmux select-pane -U
-fi
-

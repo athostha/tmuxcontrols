@@ -1,35 +1,35 @@
 function Runtmux_vertical()
 	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_vertical
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane v
 	!tmux send -t 2 $tmuxInterpreter\ %:p Enter
 endfunction
 
 function Runtmux_horizontal()
 	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane h
 	!tmux send -t 2 $tmuxInterpreter\ %:p Enter
 endfunction
 
 function Runtmux_copy()
 	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane h
 	!tmux send -t 2 "$tmuxInterpreter %:p | tee /dev/tty | xclip -select c" Enter
 endfunction
 
 
 function Runtmux_command()
 	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane h
 	!tmux send -t 2 $tmuxcommand Enter
 endfunction
 function Runtmux_alternative()
 	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane h
 	!tmux send -t 2 $tmuxInterpreter_alternative\ %:p Enter
 endfunction
 function Runtmux_execute()
 	write
-	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane_horizontal
+	!~/.vim/plugged/tmuxcontrols/plugin/scripts/create_pane h
 	!tmux send -t 2 %:p Enter
 endfunction
 function Runtmux_clean()
