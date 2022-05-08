@@ -17,6 +17,8 @@ let $size_vertical = 23				" size of the new vertical pane
 
 let $size_horizontal = 38			" size of the new horizontal pane
 
+let $venv = "~PATH/bin/activate"		" Sets virtual environment when the new pane is created
+
 ### mapping commands
 nmap çç :call Runtmux_horizontal()<CR><CR> 	" Opens new pane horizontally and runs script.
 
