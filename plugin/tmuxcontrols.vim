@@ -47,7 +47,7 @@ endfunction
 
 " Renames tmux window after current buffer, than changes it back at closing time. tmux_rename variable must be on.
 if exists('tmux_rename')
-	autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
+	autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . split(expand("%"),"/")[-1])
 	au VimLeave * silent call system("tmux setw automatic-rename")
 endif
 
