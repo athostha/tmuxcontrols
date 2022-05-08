@@ -13,6 +13,9 @@ let $tmuxInterpreter_alternative = 'python' 	" secondary interpreter, second opt
 
 let $tmuxcommand = 'pytest' 			" runs command without argument.
 
+let $size_vertical = 23				" size of the new vertical pane
+
+let $size_horizontal = 38			" size of the new horizontal pane
 
 ### mapping commands
 nmap çç :call Runtmux_horizontal()<CR><CR> 	" Opens new pane horizontally and runs script.
