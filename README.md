@@ -1,5 +1,5 @@
 # tmuxcontrols
-Vim plugin for code debugging via tmux panes.
+Neovim plugin for code debugging via tmux panes.
 
 # Setup and usage
 Paste these on your .vimrc
